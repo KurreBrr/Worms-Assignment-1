@@ -9,13 +9,20 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody PlayerBody;
     [SerializeField] private float Speed;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpY;
+    [SerializeField] private bool isGrounded;
 
     private void Update()
     {
         PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
         MovePlayer();
-
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            PlayerBody.AddForce(new Vector3(0, jumpY, 0) * jumpForce);
+            Debug.Log("Is jumping");
+        }
     }
 
     public void MovePlayer()
