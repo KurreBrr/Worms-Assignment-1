@@ -7979,7 +7979,7 @@ MonoBehaviour:
   - {fileID: 1305085712}
   - {fileID: 725538183}
   timerText: {fileID: 1456378533}
-  turnTime: 13
+  turnTime: 3
 --- !u!1 &1149274236
 GameObject:
   m_ObjectHideFlags: 0
